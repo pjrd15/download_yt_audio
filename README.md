@@ -12,6 +12,7 @@ Now install the requirements:<br>
 ```pip3 install -r requirements.txt```
 
 ### Usage
+Change the diretory to 'main' ```cd main```<br>
 Run ```python3 main.py```<br>
 paste the Youtube link on the field (it can be a single video or a playlist)<br>
 select the format and click on download.
