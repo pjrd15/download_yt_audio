@@ -19,4 +19,7 @@ Change the diretory to 'main':<br>
 Run:<br>
 ```python3 main.py```<br>
 paste the Youtube link on the field (it can be a single video or playlist)<br>
-select the format and click on download.
+select the format and click on download.<br><br>
+If you get stuck on 'Preparing wheel metadata' use:<br>
+```pip3 install --upgrade pip```<br>
+and then install the requirements again
