@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import (QApplication, QWidget, QLineEdit, QVBoxLayout, QPushButton, QInputDialog, QComboBox)
+from PyQt5.QtWidgets import (QApplication, QWidget, QLineEdit, QVBoxLayout, QTextEdit, QPushButton, QInputDialog, QComboBox)
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QIcon
 from yt_dlp import YoutubeDL
@@ -14,10 +14,10 @@ class MainWindow(QWidget):
     def init_ui(self):
         # Set the window Title and position on the screen
         self.setWindowTitle("YouTube Audio Downloader")
-        self.resize(600, 150)
+        self.resize(600, 300)
 
-        # Create the field where the Link will go
-        self.link_entry = QLineEdit(self, placeholderText = 'Youtube Link here...', clearButtonEnabled= True)
+        # Create the field where the Links will go
+        self.link_entry = QTextEdit(self, placeholderText = 'Youtube Links here separated by a comma or newline')
 
         # Create the dropdown menu to select format type
         self.drp_combo = QComboBox(self)
@@ -44,10 +44,11 @@ class MainWindow(QWidget):
 
     # Function to download the audio
     def download_audio(self):
-        # Get the youtube link from the input field
-        link = self.link_entry.text()
+        # Get the youtube links from the input field
+        links_text = self.link_entry.toPlainText()
+        links = [link.strip() for link in links_text.split('\n') + links_text.split(',')]
 
-        # Use yt_dlp to download the audio
+        # Use yt_dlp to download the audio for each link
         ydl_opts = {
             'format': 'bestaudio/best',
             'ignoreerrors': True,
@@ -59,8 +60,9 @@ class MainWindow(QWidget):
             'outtmpl': 'downloads/%(title)s.%(ext)s'
         }
         with YoutubeDL(ydl_opts) as ydl:
-            # Download the audio
-            ydl.download([link])
+            for link in links:
+                # Download the audio
+                ydl.download([link])
     
     def center(self):
         # Get the geometry of the main window
