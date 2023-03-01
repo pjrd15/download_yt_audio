@@ -6,8 +6,10 @@ Clone the repository:<br>
 ```git clone https://github.com/pjrd15/download_yt_audio.git```<br><br>
 Create a python3 Virtual enviroment inside the repo:<br>
 ```python3 -m venv .env```<br><br>
+Change the Directory:<br>
+```cd download_yt_audio```<br><br>
 Then activate it:<br>
-```source /path/to/project/download_yt_audio/.env/bin/activate```<br><br>
+```source download_yt_audio/.env/bin/activate```<br><br>
 Now install the requirements:<br>
 ```pip3 install -r requirements.txt```
 
