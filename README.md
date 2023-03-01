@@ -13,12 +13,12 @@ Then activate it:<br>
 Now install the requirements:<br>
 ```pip3 install -r requirements.txt```
 
-### Usage
+## Usage
 Change the diretory to 'main':<br>
-```cd main```<br>
+```cd main```<br><br>
 Run:<br>
-```python3 main.py```<br>
-paste the Youtube link on the field (it can be a single video or playlist)<br>
+```python3 main.py```<br><br>
+Paste the Youtube link on the field (it can be a single video or playlist)<br>
 select the format and click on download.<br><br>
 If you get stuck on 'Preparing wheel metadata' use:<br>
 ```pip3 install --upgrade pip```<br>
