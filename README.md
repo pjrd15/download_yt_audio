@@ -9,7 +9,7 @@ Change into the Directory:<br>
 Create a python3 Virtual enviroment inside the repo:<br>
 ```python3 -m venv .env```<br><br>
 Then activate it:<br>
-```source download_yt_audio/.env/bin/activate```<br><br>
+```source path/to/file/download_yt_audio/.env/bin/activate```<br><br>
 Now install the requirements:<br>
 ```pip3 install -r requirements.txt```
 
