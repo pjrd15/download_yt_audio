@@ -1,8 +1,6 @@
 Brotli==1.0.9
 certifi==2022.12.7
 mutagen==1.46.0
-pip==23.0.1
-pkg_resources==0.0.0
 pycryptodomex==3.17
 PyQt5==5.15.9
 PyQt5-Qt5==5.15.2
