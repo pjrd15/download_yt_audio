@@ -14,6 +14,7 @@ class MainWindow(QWidget):
     def init_ui(self):
         # Set the window Title and position on the screen
         self.setWindowTitle("YouTube Audio Downloader")
+        self.setWindowIcon(QIcon('..\images\download_icon.png'))
         self.resize(600, 300)
 
         # Create the field where the Links will go
@@ -21,14 +22,14 @@ class MainWindow(QWidget):
 
         # Create the dropdown menu to select format type
         self.drp_combo = QComboBox(self)
-        audio_formats = ['mp3', 'm4a', 'flac']
+        audio_formats = ['MP3', 'M4A', 'FLAC']
         self.drp_combo.addItems(audio_formats)
-        self.drp_combo.setFixedSize(70, 25)
+        self.drp_combo.setFixedSize(70, 24)
         
         # Create the download button
-        dwn_button = QPushButton(('\tDownload'))
+        dwn_button = QPushButton('\t\tDownload')
         dwn_button.clicked.connect(lambda: self.download_audio())
-        dwn_button.setIcon(QIcon(('download_icon.png')))
+        dwn_button.setIcon(QIcon(('..\images\download_icon.png')))
         dwn_button.setFixedSize(QSize(100, 30))
         
         # Place the widget on the window
@@ -54,7 +55,7 @@ class MainWindow(QWidget):
             'ignoreerrors': True,
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
-                'preferredcodec': self.drp_combo.currentText(),
+                'preferredcodec': self.drp_combo.currentText().lower(),
                 'preferredquality': '192',
             }],
             'outtmpl': 'downloads/%(title)s.%(ext)s'
