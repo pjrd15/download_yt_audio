@@ -2,7 +2,7 @@
 Small program made to extract the audio from a Youtube video/playlist, using yt_dlp for the download/extraction and PyQt5 for the GUI.
 
 ## Instalation
-Download and install Python 11.8:<br>
+Download and install Python 3.11.8 :<br>
 https://www.python.org/downloads/release/python-3118/<br><br>
 Clone the repository:<br>
 ```git clone https://github.com/pjrd15/download_yt_audio.git```<br><br>
